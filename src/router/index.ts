@@ -1,9 +1,9 @@
+import { ChatLayout } from '@/views/chat/layout'
+import mjlayout from '@/views/mj/layout.vue'
 import type { App } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { setupPageGuard } from './permission'
-import { ChatLayout } from '@/views/chat/layout'
-import mjlayout from '@/views/mj/layout.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -19,7 +19,12 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-   {
+  {
+    path: '/redirect',
+    name: 'Redirect',
+    component: () => import('@/views/redirect/index.vue'),
+  },
+  {
     path: '/g',
     name: 'g',
     component: ChatLayout,
@@ -32,7 +37,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-   {
+  {
     path: '/m',
     name: 'm',
     component: ChatLayout,
@@ -59,7 +64,6 @@ const routes: RouteRecordRaw[] = [
     ],
   },
 
-
   {
     path: '/draw',
     name: 'Rootdraw',
@@ -74,7 +78,7 @@ const routes: RouteRecordRaw[] = [
     ],
   },
 
-  //调试
+  // 调试
   // {
   //   path: '/mytest',
   //   name: 'mytest',
