@@ -23,6 +23,7 @@ const query = route.query
 .home {
   height: 100%;
   padding: 20px;
+  background-color: #fff;
 
   .title {
     font-size: 30px;
